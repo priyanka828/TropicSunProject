@@ -21,7 +21,7 @@ Caribbean. We use this as the usecase for our ISC-567 Project.
     - Dependacies -> Dependancy packages
     - Controllers -> Controllers
     - Data  -> All Data Objects Layer for DTODS: closer to the data base
-    - DTO  -> All the DTO objects 
+    - DTO  -> All the Data transfer objects 
     - Models  -> All the Models
     - Services -> All the service classes which connect Controllers and Services
     - Properties -> App property files
