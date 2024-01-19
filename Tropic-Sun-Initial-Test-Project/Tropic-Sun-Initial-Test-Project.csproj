@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Tropic_Sun_Initial_Test_Project</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Views\Auth\" />
+    <None Remove="Data\" />
+    <None Remove="DTO\" />
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Auth\" />
+    <Folder Include="Data\" />
+    <Folder Include="wwwroot\css\assets\" />
+    <Folder Include="DTO\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.15" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0-preview4.23342.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\css\assets\bg.jpg" />
+    <Content Remove="wwwroot\css\assets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\css\assets\bg.jpg" />
+  </ItemGroup>
+</Project>

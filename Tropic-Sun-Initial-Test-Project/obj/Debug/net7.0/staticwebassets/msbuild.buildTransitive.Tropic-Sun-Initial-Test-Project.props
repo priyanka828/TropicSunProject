@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/Tropic-Sun-Initial-Test-Project.props" />
+</Project>
