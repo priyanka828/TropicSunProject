@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'tropic-sun'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_75F0F3DCF4A34472A6E1F996C64DB238 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0BD31E91979E4144B71C5CFB54E8CD73 }}
           package: .
