@@ -1,18 +1,8 @@
-﻿@model Tropic_Sun_Initial_Test_Project.Models.UserModel
-
-@{
-    ViewData["shortname"] = @Model.name.Split(" ")[0];
-    ViewData["email"] = @Model.email;
+﻿@{
+    ViewData["Title"] = "Home Page";
 }
 
-
 <div class="text-center">
-    <h1 class="display-1 mt-5 text-white">Welcome</h1>
-    <h1 class="display-4 text-white">Tropic Sun</h1>
-
-    <div>
-        <p>Logged In User Name : @Model.name</p>
-        <p>Logged In User Email: @Model.email</p>
-    </div>
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-

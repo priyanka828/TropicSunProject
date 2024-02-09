@@ -1,44 +1,32 @@
-﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Tropic_Sun_Initial_Test_Project.Models;
-using Tropic_Sun_Initial_Test_Project.Services;
-using Tropic_Sun_Initial_Test_Project.DTO;
+using System.Diagnostics;
+using TropicSun.Models;
 
-namespace Tropic_Sun_Initial_Test_Project.Controllers;
-
-public class HomeController : Controller
+namespace TropicSun.Controllers
 {
-
-    private UserService userService;
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-        userService = new UserService();
-    }
+        private readonly ILogger<HomeController> _logger;
 
-    public IActionResult Index(int id)
-    {
-        UserModel userModel = new UserModel();
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
 
-        UserDTO dto = userService.getUserById(id);
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-        userModel.name = dto.name;
-        userModel.email = dto.email;
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
-        return View(userModel);
-    }
-
-    public IActionResult LogoutControl()
-    {
-        return RedirectToAction("SignIn", "Auth");
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }
-

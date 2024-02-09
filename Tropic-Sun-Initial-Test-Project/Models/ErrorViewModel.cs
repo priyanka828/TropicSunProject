@@ -1,9 +1,9 @@
-﻿namespace Tropic_Sun_Initial_Test_Project.Models;
-
-public class ErrorViewModel
+namespace TropicSun.Models
 {
-    public string? RequestId { get; set; }
+    public class ErrorViewModel
+    {
+        public string? RequestId { get; set; }
 
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
 }
-

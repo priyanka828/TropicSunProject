@@ -1,7 +1,14 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using TropicSun.DAL;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddMvc();
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")
+        ?? throw new InvalidOperationException("Connection String not found")));
 
 var app = builder.Build();
 
@@ -22,7 +29,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=SignIn}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-
